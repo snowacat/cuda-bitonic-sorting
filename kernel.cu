@@ -7,7 +7,7 @@
 
 #define THREADS 128
 #define BLOCKS 32768
-#define NUM_VALS 16777216 //THREADS*BLOCKS
+#define NUM_VALS THREADS*BLOCKS
 
 using namespace std;
 
@@ -37,7 +37,5 @@ int main(void)
 	bitonic_sort(values, NUM_VALS, BLOCKS, THREADS);
 
 	cout << "Time: " << ((double) (clock() - start)) / CLOCKS_PER_SEC << " seconds." << endl;
-	 char* p;
-	 cin >> p;
 	//Print(values);
 }

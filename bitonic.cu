@@ -39,11 +39,10 @@ void bitonic_sort(float *values, int NUM_VALS, int BLOCKS, int THREADS)
 	float *dev_values;
 	size_t size = NUM_VALS * sizeof(float);
 
-	// Allocate sapce for device copies of values
+	// Allocate space for device copies of values
 	cudaMalloc((void**) &dev_values, size);	
 	cudaMemcpy(dev_values, values, size, cudaMemcpyHostToDevice);
 
-	// задание параметров выполнения ядра
 	dim3 blocks(BLOCKS, 1);    /* Number of blocks   */
 	dim3 threads(THREADS, 1);  /* Number of threads  */
 
