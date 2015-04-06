@@ -6,3 +6,5 @@ But there are several changes:
 Separate CUDA code in multiple files
 <br/>
 And another simple changes
+
+test
